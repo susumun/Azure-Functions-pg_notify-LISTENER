@@ -50,6 +50,16 @@ CREATE TRIGGER logs_notify_update
 
 3. (PostgreSQL) Confirm NOTYFY by pgsql listener command
 
+- Start Command Prompt
+```
+psql -h [HOSTNAME] -U [USERNAME] -d [DBNAME] -p 5432
+```
+
+- Start LISTENER
+```
+LISTEN ChannelName;
+```
+
 4. (Azure) CREATE Functions(Dispatcher)
  - LISTENER for pg_notify()
    - CREATE Function App
