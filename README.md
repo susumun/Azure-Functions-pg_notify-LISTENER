@@ -65,6 +65,7 @@ CREATE TRIGGER logs_notify_update
    - CREATE BLOB CONTAINER
    - bind in Blob and out Blob
    - Copy Code 3.2
+   - INSERT NEW Data and Confirm the result of LISTENER Function
 
 
 
