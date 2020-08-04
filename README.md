@@ -51,20 +51,20 @@ CREATE TRIGGER logs_notify_update
 3. (PostgreSQL) Confirm NOTYFY by pgsql listener command
 
 4. (Azure) CREATE Functions(Dispatcher)
- 1. LISTENER for pg_notify()
-   1.CREATE Function App
-   2.CREATE Timer Trigger Function 1
-   3.add function.proj
-   4.Copy Code 3.1
-   5.INSERT NEW Data and Confirm the result of LISTENER Function
+ - LISTENER for pg_notify()
+   - CREATE Function App
+   - CREATE Timer Trigger Function 1
+   - add function.proj
+   - Copy Code 3.1
+   - INSERT NEW Data and Confirm the result of LISTENER Function
 
- 2. Tracking By WwaterMark
-   1.CREATE TABLE logs_watermark, logs_exec_history
-   2.CREATE Timer Trigger Function 2
-   3.add functin.proj
-   4.CREATE BLOB CONTAINER
-   5.bind in Blob and out Blob
-   6.Copy Code 3.2
+ - Tracking By WwaterMark
+   - CREATE TABLE logs_watermark, logs_exec_history
+   - CREATE Timer Trigger Function 2
+   - add functin.proj
+   - CREATE BLOB CONTAINER
+   - bind in Blob and out Blob
+   - Copy Code 3.2
 
 
 
