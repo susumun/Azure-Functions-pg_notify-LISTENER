@@ -14,7 +14,6 @@ BEGIN
 	Id = OLD."id";
   END IF;
   PERFORM pg_notify('logsnotification', TG_OP || ';' || Id );
---  PERFORM pg_notify('logsnotification', 'TEST' );
   RETURN NEW;
 END;
 $BODY$;
