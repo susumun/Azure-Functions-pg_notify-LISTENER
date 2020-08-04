@@ -3,23 +3,25 @@
 1. (PostgreSQL) CREATE PG FUNCTION
 
 ```
-CREATE FUNCTION public."logs_update_notify"()
-	RETURNS trigger
-	LANGUAGE 'plpgsql'
-	COST 100
-	VOLATILE NOT LEAKPROOF 
+CREATE FUNCTION public.logs_notify()
+    RETURNS trigger
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE NOT LEAKPROOF
 AS $BODY$
 DECLARE
-  Id uuid;
+  Id bigint;
 BEGIN
   IF TG_OP = 'INSERT' OR TG_OP = 'UPDATE' THEN
-	Id = NEW."Id";
+	Id = NEW."id";
   ELSE
-	Id = OLD."Id";
+	Id = OLD."id";
   END IF;
   PERFORM pg_notify('logsnotification', TG_OP || ';' || Id );
+--  PERFORM pg_notify('logsnotification', 'TEST' );
   RETURN NEW;
 END;
+$BODY$;
 ```
 2. (PostgreSQL) CREATE PG TRIGGER
 
