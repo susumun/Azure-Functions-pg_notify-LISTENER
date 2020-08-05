@@ -62,7 +62,7 @@
 
 - LISTEN 
     ```
-    //LISTEN [Channel Name];
+    --LISTEN [Channel Name];
     LISTEN logsnotification;
     ```
 
