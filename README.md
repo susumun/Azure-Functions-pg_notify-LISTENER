@@ -181,12 +181,12 @@
           "direction": "in",
           "type": "blob",
           "path": "archive/{datetime:yyyy}/{datetime:MM}/{datetime:dd}/{datetime:HH}/archive.json",
-          "connection": "storagenttsmartdcblob_STORAGE"
+          "connection": "storagexxxblob_STORAGE"
         },
         {
           "name": "outputBlob",
           "path": "archive/{datetime:yyyy}/{datetime:MM}/{datetime:dd}/{datetime:HH}/archive.json",
-          "connection": "storagenttsmartdcblob_STORAGE",
+          "connection": "storagexxxblob_STORAGE",
           "direction": "out",
           "type": "blob"
         }
