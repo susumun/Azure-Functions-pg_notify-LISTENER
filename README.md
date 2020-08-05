@@ -30,11 +30,11 @@
 
     ```
     --CREATE TRIGGER (INSERT)
-    CREATE TRIGGER logs_notify_update
+    CREATE TRIGGER logs_notify_insert
       AFTER INSERT 
       ON public."logs"
       FOR EACH ROW
-      EXECUTE PROCEDURE public."logs_update_notify"();
+      EXECUTE PROCEDURE public."logs_notify"();
 
 
     --CREATE TRIGGER (UPDATE)
@@ -42,15 +42,15 @@
       AFTER UPDATE 
       ON public."logs"
       FOR EACH ROW
-      EXECUTE PROCEDURE public."logs_update_notify"();
+      EXECUTE PROCEDURE public."logs_notify"();
 
 
     --CREATE TRIGGER (DELETE)
-    CREATE TRIGGER logs_notify_update
+    CREATE TRIGGER logs_notify_delete
       AFTER DELETE 
       ON public."logs"
       FOR EACH ROW
-      EXECUTE PROCEDURE public."logs_update_notify"();
+      EXECUTE PROCEDURE public."logs_notify"();
     ```
 
 3. (PostgreSQL) Confirm NOTYFY by pgsql listener command
@@ -60,9 +60,10 @@
     psql -h [HOSTNAME] -U [USERNAME] -d [DBNAME] -p 5432
     ```
 
-- LISTEN
+- LISTEN 
     ```
-    LISTEN ChannelName;
+    //LISTEN [Channel Name];
+    LISTEN logsnotification;
     ```
 
 4. (Azure) CREATE Functions(Dispatcher) - LISTENER for pg_notify()
