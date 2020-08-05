@@ -60,7 +60,7 @@
     psql -h [HOSTNAME] -U [USERNAME] -d [DBNAME] -p 5432
     ```
 
-- Start LISTENER
+- LISTEN
     ```
     LISTEN ChannelName;
     ```
