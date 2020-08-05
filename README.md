@@ -159,7 +159,7 @@
     );
     ```
    - CREATE Timer Trigger Function 2
-   - add functin.proj(skip because already set previous step)
+   - add functin.proj
    - CREATE BLOB CONTAINER
      - add Container for archive data
    - bind in Blob and out Blob
@@ -337,13 +337,13 @@
     }
 
     ```
-
   - INSERT NEW Data or Add new file(dummy.data) in the folder associated with the BLOB trigger and Confirm the result of LISTENER Function log
     ```
     insert into logs(content) values('{"id":"test"}');
     ```
 
-
+  - Refer CloudAppendBlob
+    - https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-bindings-storage-blob-output?tabs=csharp-script#usage    
 
 
 
